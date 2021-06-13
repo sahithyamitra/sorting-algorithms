@@ -1,0 +1,8 @@
+Best case: O(n)
+Worst case: O(n^2)
+
+advantages: 1. In-Place
+2.Stable algorithm-The sequence or order of equal elements are not changed in sorted array from that of original array
+3.It is used for small arrays like tim sort
+
+code:
