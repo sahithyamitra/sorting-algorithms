@@ -1,3 +1,3 @@
 # sorting-algorithms
 
-selection sort-selection sort is a sorting algorithm in which the minimum element is found in each loop of array and it is swapped with the elements present in front end of array.This process repeats ntil the array is sorted.
+selection sort-selection sort is a sorting algorithm in which the first minimum element is found in an array and it is swapped with the first element in the array.Then the second minimum element is found which is swapped with 2nd element.This process repeats until the array is sorted.
