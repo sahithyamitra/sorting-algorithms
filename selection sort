@@ -3,7 +3,7 @@ worst case-O(n^2)
 
 advantages of using selection sort:1.It has less memory writes when compared to other sorting algorithms such as merge sort,quick sort,insertion sort.memory writes can be costly process when sorting the files and putting it to hard disk or on memory while swapping.
 2.It is the basic idea for heap sort
-3.It is not stable algorithm-the sequence of elements can change while sorted and that of original array when used with user defined objects
+3.It is not stable algorithm-the sequence or order of equal elements can change while sorted and that of original array when used with user defined objects
 4.It is in-place
 
 code:
