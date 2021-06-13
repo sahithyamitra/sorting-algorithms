@@ -8,3 +8,32 @@ advantages of using selection sort:1.It has less memory writes when compared to 
 
 code:
 
+package sorting;
+
+public class Console {
+	
+	public static void main(String[] args) {
+		int[] ar= {5,4,3,6,2,1};
+		int n=ar.length;
+		for(int i=0;i<n-1;i++)
+		{
+			int min=i;
+			for(int j=i+1;j<n;j++)
+			{
+				if(ar[min]>ar[j])
+				{
+					min=j;				
+				}
+			}
+			int temp=ar[i];
+			ar[i]=ar[min];
+			ar[min]=temp;
+		}
+		for(int i:ar)
+		{
+			System.out.println(i);
+		}
+
+	}
+
+}
