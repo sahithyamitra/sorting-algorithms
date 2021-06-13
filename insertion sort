@@ -5,4 +5,39 @@ advantages: 1. In-Place
 2.Stable algorithm-The sequence or order of equal elements are not changed in sorted array from that of original array
 3.It is used for small arrays like tim sort
 
-code:
+approach:
+
+public class Console {
+	
+	public static void main(String[] args) {
+		int[] ar= {24,18,38,43,14,40,1,54};
+		int n=ar.length,sorted=0;
+		for(int i=1;i<n;i++)
+		{
+			if(ar[sorted]>ar[i])
+			{
+				int k=sorted;
+				int j=i;
+				while((k!=-1) && (ar[k]>ar[j]))
+				{
+					int temp=ar[j];
+					ar[j]=ar[k];
+					ar[k]=temp;
+					k--;
+					j--;
+				}
+				sorted++;
+			}
+			else
+			{
+				sorted++;
+			}
+		}
+		for(int i:ar)
+		{
+			System.out.println(i);
+		}
+	}
+
+}
+
