@@ -1,0 +1,79 @@
+best case:O(n)->when data is uniformly distributed
+worst case: O(n^2)->when elements in the data go into single bucket and we use insertion sort for sorting elements in bucket
+O(n*logn)->when we use merge sort or quick sort as sorting algorithms.
+
+advantages: ->when data is uniformly distributed and when huge number of elements have to be sorted,then bucket sort can be used.
+
+steps:
+->find max element
+->filter the numbers into buckets
+->sort each bucket
+->join the buckets
+
+appraoch:
+
+package inheritance;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Console {
+	public int find_max(int[] ar,int n)
+	{
+		int max=0;
+		for(int i=0;i<n;i++)
+		{
+			max=Math.max(max, ar[i]);
+			max++;
+		}
+		return max;
+	}
+	public ArrayList<ArrayList<Integer>> fill_buckets(int[] ar,int n,int k,int max)
+	{
+		ArrayList<ArrayList<Integer>> arlist=new ArrayList<ArrayList<Integer>>();
+		for(int i=0;i<k;i++)
+		{
+			arlist.add(new ArrayList<Integer>());
+		}
+		for(int i=0;i<n;i++)
+		{
+			int bi=(k*ar[i])/max;
+			arlist.get((int)bi).add(ar[i]);
+		}
+		return arlist;
+	}
+	public void sort_bucket(ArrayList<ArrayList<Integer>> arlist,int k)
+	{
+		for(int i=0;i<k;i++)
+		{
+			Collections.sort(arlist.get(i));
+		}
+	}
+	public void concatenate(int[] ar,ArrayList<ArrayList<Integer>> arlist,int k,int n)
+	{
+		int p=0;
+		for(int i=0;i<k;i++)
+		{
+			for(int j=0;j<arlist.get(i).size();j++)
+			{
+				ar[p++]=arlist.get(i).get(j);
+			}
+		}
+	}
+	public static void main(String[] args) {
+		int[] ar= {30,40,10,80,5,12,70};
+		int n=ar.length;
+		Console cs=new Console();
+		int max=cs.find_max(ar,n);
+		ArrayList<ArrayList<Integer>> arr=new ArrayList<ArrayList<Integer>>();
+		arr=cs.fill_buckets(ar,n,5,max);
+		cs.sort_bucket(arr, 5);
+		cs.concatenate(ar,arr,5,n);
+		for(int i:ar)
+		{
+			System.out.println(i);
+		}
+		
+	}
+
+}
