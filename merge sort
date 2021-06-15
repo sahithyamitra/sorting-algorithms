@@ -1,0 +1,10 @@
+merge sort
+
+idea:->Its a divide and conquer algorithm
+->Best case and worst case Time complexity:O(n*logn)
+->auxillary space:O(n)
+->Stable algorithm:The sequence of equal elements remains the same after sorting
+->well suited for linked lists where it works in O(1) auxillary space
+->whereas for arrays,quicksort outperforms merge sort
+->used in external sorting technique.
+
